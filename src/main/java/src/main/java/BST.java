@@ -30,3 +30,33 @@ class BST {
         return 1 + Math.max(height(node.left), height(node.right));
     }
 }
+
+public void delete(int key) {
+    root = delete(root, key);
+}
+
+private Node delete(Node node, int key) {
+    if (node == null) return node;
+    
+    if (key < node.key) 
+        node.left = delete(node.left, key);
+    else if (key > node.key) 
+        node.right = delete(node.right, key);
+    else {
+        if (node.left == null) return node.right;
+        if (node.right == null) return node.left;
+        
+        node.key = minValue(node.right);
+        node.right = delete(node.right, node.key);
+    }
+    return node;
+}
+
+private int minValue(Node node) {
+    int min = node.key;
+    while (node.left != null) {
+        node = node.left;
+        min = node.key;
+    }
+    return min;
+}
