@@ -46,4 +46,11 @@ java -cp classes Main tsp n=100 runs=30
 ## Relatório
 [relatorio.pdf](report/relatorio.pdf) - Introdução, Teoria, Análise O(), Metodologia, Resultados, Discussão.
 
-## Estrutura Repo
+## 🌳 ÁRVORES DE BUSCA IMPLEMENTADAS
+
+| Árvore | Funcionalidades | Teste OnlineGDB |
+|--------|-----------------|-----------------|
+| **BST** | insert/search/height/delete | `Altura 3 ✓ 40:true ✓ 99:false ✓` |
+| **AVL** | 4 rotações LL/RR/LR/RL | `Busca 20: true ✓ Altura 2 ✓` |
+| **Rubro-Negra** | insert/fixInsert | `Busca 20: true ✓` |
+
