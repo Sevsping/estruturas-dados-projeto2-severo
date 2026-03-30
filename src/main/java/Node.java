@@ -1,7 +1,7 @@
-public class Node {
+class Node {
     int key;
     Node left, right;
-    public Node(int key) {
+    Node(int key) {
         this.key = key;
     }
 }
