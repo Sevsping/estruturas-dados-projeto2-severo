@@ -1,57 +1,54 @@
-public class BST {
+class BST {
     Node root;
     
-    public void insert(int key) {
-        root = insert(root, key);
+    void insert(int key) {
+        root = insertRec(root, key);
     }
     
-    private Node insert(Node node, int key) {
+    Node insertRec(Node node, int key) {
         if (node == null) return new Node(key);
-        if (key < node.key) node.left = insert(node.left, key);
-        else if (key > node.key) node.right = insert(node.right, key);
+        if (key < node.key) node.left = insertRec(node.left, key);
+        else if (key > node.key) node.right = insertRec(node.right, key);
         return node;
     }
     
-    public boolean search(int key) {
-        Node node = root;
-        while (node != null) {
-            if (key == node.key) return true;
-            node = key < node.key ? node.left : node.right;
-        }
-        return false;
+    boolean search(int key) {
+        return searchRec(root, key);
     }
     
-    public int height() {
-        return height(root);
+    boolean searchRec(Node node, int key) {
+        if (node == null) return false;
+        if (key == node.key) return true;
+        return key < node.key ? searchRec(node.left, key) : searchRec(node.right, key);
     }
     
-    private int height(Node node) {
+    int height() {
+        return heightRec(root);
+    }
+    
+    int heightRec(Node node) {
         if (node == null) return 0;
-        return 1 + Math.max(height(node.left), height(node.right));
+        return 1 + Math.max(heightRec(node.left), heightRec(node.right));
     }
     
-    public void delete(int key) {
-        root = delete(root, key);
+    void delete(int key) {
+        root = deleteRec(root, key);
     }
     
-    private Node delete(Node node, int key) {
+    Node deleteRec(Node node, int key) {
         if (node == null) return node;
-        
-        if (key < node.key) 
-            node.left = delete(node.left, key);
-        else if (key > node.key) 
-            node.right = delete(node.right, key);
+        if (key < node.key) node.left = deleteRec(node.left, key);
+        else if (key > node.key) node.right = deleteRec(node.right, key);
         else {
             if (node.left == null) return node.right;
             if (node.right == null) return node.left;
-            
             node.key = minValue(node.right);
-            node.right = delete(node.right, node.key);
+            node.right = deleteRec(node.right, node.key);
         }
         return node;
     }
     
-    private int minValue(Node node) {
+    int minValue(Node node) {
         int min = node.key;
         while (node.left != null) {
             node = node.left;
