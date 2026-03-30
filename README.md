@@ -44,7 +44,7 @@ java -cp classes Main tsp n=100 runs=30
 - Resultados: experiments/results/times_*.csv
 
 ## Relatório
-[relatorio.pdf](report/relatorio.pdf) - Introdução, Teoria, Análise O(), Metodologia, Resultados, Discussão.
+ - Introdução, Teoria, Análise O(), Metodologia, Resultados,Discussão,Conclusão.
 
 ## 🌳 ÁRVORES DE BUSCA IMPLEMENTADAS
 
