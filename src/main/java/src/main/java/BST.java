@@ -30,7 +30,6 @@ class BST {
         return 1 + Math.max(height(node.left), height(node.right));
     }
 }
-
 public void delete(int key) {
     root = delete(root, key);
 }
