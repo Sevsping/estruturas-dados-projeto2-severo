@@ -46,7 +46,7 @@ java -cp classes Main tsp n=100 runs=30
 ## Relatório
  - Introdução, Teoria, Análise O(), Metodologia, Resultados,Discussão,Conclusão.
 
-## 🌳 ÁRVORES DE BUSCA IMPLEMENTADAS
+## ÁRVORES DE BUSCA IMPLEMENTADAS
 
 | Árvore | Funcionalidades | Teste OnlineGDB |
 |--------|-----------------|-----------------|
